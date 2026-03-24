@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Aditya Singh Rajput</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0d1117;
+      color: #e6edf3;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 36px;
+    }
+
+    h1 {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.6rem;
+      color: #f0f6fc;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: #8b949e;
+      font-size: 0.9rem;
+      margin-bottom: 36px;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .filter-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #30363d;
+      background: transparent;
+      color: #8b949e;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: #f97316;
+      border-color: #f97316;
+      color: white;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: default;
+    }
+
+    .card:hover {
+      border-color: #f97316;
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #f0f6fc;
+      font-family: 'Space Mono', monospace;
+      line-height: 1.3;
+    }
+
+    .card-link {
+      color: #8b949e;
+      text-decoration: none;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+
+    .card-link:hover { color: #f97316; }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: #8b949e;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: #21262d;
+      color: #8b949e;
+      border: 1px solid #30363d;
+    }
+
+    .tag.highlight { background: #1a1f2e; color: #f97316; border-color: #f97316; }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .lang-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .lang-label {
+      font-size: 0.78rem;
+      color: #8b949e;
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Projects</h1>
+    <p class="subtitle">Things I've built — web, mobile, desktop, AI, and games.</p>
+
+    <div class="filter-row">
+      <button class="filter-btn active" onclick="filter('all', this)">All</button>
+      <button class="filter-btn" onclick="filter('fullstack', this)">Full-Stack</button>
+      <button class="filter-btn" onclick="filter('mobile', this)">Mobile</button>
+      <button class="filter-btn" onclick="filter('ai', this)">AI / ML</button>
+      <button class="filter-btn" onclick="filter('tools', this)">Tools</button>
+      <button class="filter-btn" onclick="filter('games', this)">Games</button>
+    </div>
+
+    <div class="grid" id="grid">
+
+      <div class="card" data-tags="fullstack">
+        <div class="card-header">
+          <div class="card-title">BillVyapar</div>
+          <a class="card-link" href="https://github.com/adityasingh03rajput/BillVyapar" target="_blank">↗ GitHub</a>
+        </div>
+        <div class="card-desc">Complete billing ecosystem for Indian SMBs. Invoices, GST, Vyapar Khata, POS, analytics, Twilio SMS reminders, subscription system, Master Admin console. Runs on Web, Android (Capacitor) & Desktop (Electron).</div>
+        <div class="card-tags">
+          <span class="tag highlight">Flagship</span>
+          <span class="tag">React 18</span><span class="tag">TypeScript</span>
+          <span class="tag">Node.js</span><span class="tag">MongoDB</span>
+          <span class="tag">Electron</span><span class="tag">Capacitor</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#3178c6"></span>
+          <span class="lang-label">TypeScript</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="fullstack">
+        <div class="card-header">
+          <div class="card-title">INTROVERT</div>
+          <a class="card-link" href="https://google-8j5x.onrender.com" target="_blank">↗ Live</a>
+        </div>
+        <div class="card-desc">Anonymous social platform with full social graph — posts, likes, comments, follow system, face recognition search, watch parties, collaborative canvas, WebRTC calls, AI translation & smart replies.</div>
+        <div class="card-tags">
+          <span class="tag">Node.js</span><span class="tag">Socket.IO</span>
+          <span class="tag">WebRTC</span><span class="tag">JWT</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#f1e05a"></span>
+          <span class="lang-label">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="mobile fullstack">
+        <div class="card-header">
+          <div class="card-title">LetsBunk</div>
+          <a class="card-link" href="https://github.com/adityasingh03rajput/native-bunk" target="_blank">↗ GitHub</a>
+        </div>
+        <div class="card-desc">Smart attendance system with Server-Driven UI — server controls the app layout without releases. Face verification, WiFi BSSID validation, random ring checks, Electron admin panel.</div>
+        <div class="card-tags">
+          <span class="tag highlight">⭐ 1</span>
+          <span class="tag">React Native</span><span class="tag">SDUI</span>
+          <span class="tag">Electron</span><span class="tag">MongoDB</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#f1e05a"></span>
+          <span class="lang-label">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="fullstack mobile">
+        <div class="card-header">
+          <div class="card-title">Chilly Chills</div>
+          <a class="card-link" href="https://github.com/adityasingh03rajput/Chillychills" target="_blank">↗ GitHub</a>
+        </div>
+        <div class="card-desc">Food ordering platform for a college canteen. Student app, manager dashboard with analytics & finance reports, staff dashboard, real-time orders via Socket.IO, UPI checkout, wallet system.</div>
+        <div class="card-tags">
+          <span class="tag">React Native</span><span class="tag">Node.js</span>
+          <span class="tag">MongoDB</span><span class="tag">Socket.IO</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#3178c6"></span>
+          <span class="lang-label">TypeScript</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="tools">
+        <div class="card-header">
+          <div class="card-title">NodeCity 3D</div>
+          <a class="card-link" href="https://adityasingh03rajput.github.io/nodecity" target="_blank">↗ Live</a>
+        </div>
+        <div class="card-desc">Transform any codebase into an interactive 3D city with Three.js. 41+ features: heat maps, security scanner, code smell detector, dependency graph, multi-user collaboration, git time machine.</div>
+        <div class="card-tags">
+          <span class="tag">Three.js</span><span class="tag">WebGL</span>
+          <span class="tag">Git</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#e34c26"></span>
+          <span class="lang-label">HTML / JS</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="fullstack">
+        <div class="card-header">
+          <div class="card-title">EquityEdge</div>
+          <a class="card-link" href="https://github.com/adityasingh03rajput/BillVyapar" target="_blank">↗ GitHub</a>
+        </div>
+        <div class="card-desc">Stock trading web app with dashboard, portfolio management, watchlist, trade modal, transactions history, admin panel, and Recharts data visualizations. Deployed on Netlify.</div>
+        <div class="card-tags">
+          <span class="tag">React 18</span><span class="tag">TypeScript</span>
+          <span class="tag">Recharts</span><span class="tag">Netlify</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#3178c6"></span>
+          <span class="lang-label">TypeScript</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="mobile ai">
+        <div class="card-header">
+          <div class="card-title">Nazaare</div>
+          <a class="card-link" href="https://github.com/adityasingh03rajput/nazaare" target="_blank">↗ GitHub</a>
+        </div>
+        <div class="card-desc">Android app for ML-based site enrollment and real-time verification. MediaPipe EfficientDet Lite0 for object detection, MobileNet V3 for image embeddings, Node.js + MongoDB backend.</div>
+        <div class="card-tags">
+          <span class="tag">Android</span><span class="tag">Kotlin</span>
+          <span class="tag">MediaPipe</span><span class="tag">MobileNet</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#A97BFF"></span>
+          <span class="lang-label">Kotlin</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="mobile ai">
+        <div class="card-header">
+          <div class="card-title">Photo-Lelo 3.0</div>
+          <a class="card-link" href="https://github.com/adityasingh03rajput" target="_blank">↗ GitHub</a>
+        </div>
+        <div class="card-desc">Android face enrollment & verification app with liveness detection. Extracts face embeddings via MobileNet, stores in MongoDB, verifies identity by comparing embedding vectors.</div>
+        <div class="card-tags">
+          <span class="tag">Android</span><span class="tag">Kotlin</span>
+          <span class="tag">Liveness Detection</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#A97BFF"></span>
+          <span class="lang-label">Kotlin</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="ai">
+        <div class="card-header">
+          <div class="card-title">AdionAI</div>
+          <a class="card-link" href="https://github.com/adityasingh03rajput" target="_blank">↗ GitHub</a>
+        </div>
+        <div class="card-desc">Two AI systems: a character-level Transformer (nanoGPT) that generates ink recipes, and a Random Forest optimizer that produces top-5 formulations meeting all specs. Replicates Hokkaido University's Nature paper methodology.</div>
+        <div class="card-tags">
+          <span class="tag">PyTorch</span><span class="tag">Transformer</span>
+          <span class="tag">Random Forest</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#3572A5"></span>
+          <span class="lang-label">Python</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="ai">
+        <div class="card-header">
+          <div class="card-title">Lost Person Finder</div>
+          <a class="card-link" href="https://github.com/adityasingh03rajput/lost-person-finder" target="_blank">↗ GitHub</a>
+        </div>
+        <div class="card-desc">Web platform for reporting and finding missing persons using facial recognition. Submit a photo and the system matches it against a database of missing persons with confidence scores.</div>
+        <div class="card-tags">
+          <span class="tag">Face Recognition</span><span class="tag">JavaScript</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#e34c26"></span>
+          <span class="lang-label">HTML / JS</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="fullstack">
+        <div class="card-header">
+          <div class="card-title">Ucab</div>
+          <a class="card-link" href="https://github.com/adityasingh03rajput" target="_blank">↗ GitHub</a>
+        </div>
+        <div class="card-desc">MERN stack cab booking app. Nearby cab detection, real-time ride tracking via Socket.IO, fare calculation, JWT auth, ride history, promo codes, and in-ride refreshment purchase.</div>
+        <div class="card-tags">
+          <span class="tag">React</span><span class="tag">Node.js</span>
+          <span class="tag">MongoDB</span><span class="tag">Socket.IO</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#3178c6"></span>
+          <span class="lang-label">TypeScript</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="games">
+        <div class="card-header">
+          <div class="card-title">Wall Chess</div>
+          <a class="card-link" href="https://github.com/adityasingh03rajput/wall-chess" target="_blank">↗ GitHub</a>
+        </div>
+        <div class="card-desc">Multiplayer chess game in the browser. Full chess rules implementation with real-time multiplayer support.</div>
+        <div class="card-tags">
+          <span class="tag">JavaScript</span><span class="tag">Multiplayer</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#f1e05a"></span>
+          <span class="lang-label">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="card" data-tags="games">
+        <div class="card-header">
+          <div class="card-title">Wall Path Duels</div>
+          <a class="card-link" href="https://github.com/adityasingh03rajput/wall-path-duels" target="_blank">↗ GitHub</a>
+        </div>
+        <div class="card-desc">Multiplayer strategy path-dueling game. Two players compete to find paths while blocking each other.</div>
+        <div class="card-tags">
+          <span class="tag">TypeScript</span><span class="tag">Multiplayer</span>
+        </div>
+        <div class="card-footer">
+          <span class="lang-dot" style="background:#3178c6"></span>
+          <span class="lang-label">TypeScript</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function filter(tag, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.card').forEach(card => {
+        if (tag === 'all' || card.dataset.tags.includes(tag)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

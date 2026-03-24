@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Aditya Singh Rajput</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0d1117;
+      color: #e6edf3;
+      font-family: 'Inter', sans-serif;
+      height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f97316, #ec4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .header-text h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Space Mono', monospace;
+      color: #f0f6fc;
+      line-height: 1.2;
+    }
+
+    .header-text .role {
+      font-size: 1rem;
+      color: #f97316;
+      margin-top: 6px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .header-text .email {
+      font-size: 0.85rem;
+      color: #8b949e;
+      margin-top: 4px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #f97316;
+      margin-bottom: 16px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .bio {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #c9d1d9;
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 10px;
+    }
+
+    .stack-item {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      color: #c9d1d9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stack-item .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .link-btn.github {
+      background: #21262d;
+      color: #f0f6fc;
+      border: 1px solid #30363d;
+    }
+
+    .link-btn.github:hover { background: #30363d; }
+
+    .link-btn.email {
+      background: #f97316;
+      color: white;
+      border: 1px solid #f97316;
+    }
+
+    .link-btn.email:hover { background: #ea6c0a; }
+
+    .stat-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 16px 24px;
+      text-align: center;
+      flex: 1;
+      min-width: 100px;
+    }
+
+    .stat .num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #f97316;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .stat .label {
+      font-size: 0.78rem;
+      color: #8b949e;
+      margin-top: 4px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #21262d;
+      margin: 32px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <div class="avatar">AR</div>
+      <div class="header-text">
+        <h1>Aditya Singh Rajput</h1>
+        <div class="role">Full-Stack Developer</div>
+        <div class="email">adityarajsir162@gmail.com</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">About</div>
+      <p class="bio">
+        Self-driven developer who builds across the entire stack — web, mobile, desktop, and AI.
+        I've shipped production-grade billing software, anonymous social platforms, attendance systems,
+        developer tooling, ML-powered Android apps, and multiplayer games.
+        I pick up whatever tech the problem needs and get it done.
+      </p>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="section">
+      <div class="section-title">Stats</div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="num">33+</div>
+          <div class="label">GitHub Repos</div>
+        </div>
+        <div class="stat">
+          <div class="num">10+</div>
+          <div class="label">Projects Shipped</div>
+        </div>
+        <div class="stat">
+          <div class="num">5+</div>
+          <div class="label">Platforms</div>
+        </div>
+        <div class="stat">
+          <div class="num">∞</div>
+          <div class="label">Curiosity</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="section">
+      <div class="section-title">Tech Stack</div>
+      <div class="stack-grid">
+        <div class="stack-item"><span class="dot" style="background:#61dafb"></span>React 18</div>
+        <div class="stack-item"><span class="dot" style="background:#3178c6"></span>TypeScript</div>
+        <div class="stack-item"><span class="dot" style="background:#68a063"></span>Node.js</div>
+        <div class="stack-item"><span class="dot" style="background:#47a248"></span>MongoDB</div>
+        <div class="stack-item"><span class="dot" style="background:#f97316"></span>React Native</div>
+        <div class="stack-item"><span class="dot" style="background:#a855f7"></span>Android (Kotlin)</div>
+        <div class="stack-item"><span class="dot" style="background:#06b6d4"></span>Tailwind CSS</div>
+        <div class="stack-item"><span class="dot" style="background:#ee4b2b"></span>Three.js</div>
+        <div class="stack-item"><span class="dot" style="background:#ee4b2b"></span>PyTorch</div>
+        <div class="stack-item"><span class="dot" style="background:#f7df1e"></span>Socket.IO</div>
+        <div class="stack-item"><span class="dot" style="background:#54b4d3"></span>Flutter</div>
+        <div class="stack-item"><span class="dot" style="background:#6e40c9"></span>Electron</div>
+        <div class="stack-item"><span class="dot" style="background:#00b4d8"></span>WebRTC</div>
+        <div class="stack-item"><span class="dot" style="background:#f97316"></span>Capacitor</div>
+        <div class="stack-item"><span class="dot" style="background:#8b949e"></span>JWT / bcrypt</div>
+        <div class="stack-item"><span class="dot" style="background:#2ea44f"></span>Supabase</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="section">
+      <div class="section-title">Links</div>
+      <div class="links">
+        <a class="link-btn github" href="https://github.com/adityasingh03rajput" target="_blank">
+          ⬡ GitHub
+        </a>
+        <a class="link-btn email" href="mailto:adityarajsir162@gmail.com">
+          ✉ Email Me
+        </a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
